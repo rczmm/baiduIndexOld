@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>养老分析系统</title>
+    <!-- 引入 layui.css -->
+    <link href="..\static\layui\css\layui.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/首页.css" rel="stylesheet" type="text/css">
+    <!-- 引入 font -->
+    <link href="layui/font/iconfont.eot" rel="stylesheet">
+    <!-- 引入 layui.js -->
+    <script src=".\static\layui\layui.js"></script>
+    <link rel="stylesheet" href="../static/layui/css/layui.css">
+</head>
+<body>
+<div class="layui-row">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo layui-hide-xs layui-bg-black" style="width:240px">基于百度指数养老需求分析系统</div>
+            <ul class="layui-nav layui-layout-right">
+                        <li class="layui-nav-item layui-hide layui-show-sm-inline-block">
+                            <a href="javascript:;">
+                                <img src="//unpkg.com/outeres@0.0.10/img/layui/icon-v2.png" class="layui-nav-img">
+                                tester
+                            </a>
+                            <dl class="layui-nav-child">
+                                <dd><a href="javascript:;">Login</a></dd>
+                                <dd><a href="javascript:;">Exit</a></dd>
+                            </dl>
+                        </li>
+                        <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+                            <a href="javascript:;">
+                                <i class="layui-icon layui-icon-more-vertical"></i>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+        <div class="layui-side layui-bg-black"  style="width:240px">
+                    <div class="layui-side-scroll">
+                        <!-- 左侧导航区域 -->
+                        <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                            <li class="layui-nav-item"><a href="热点话题1.html" style="font-size:17px;">养老热点话题</a></li>
+                            <li class="layui-nav-item"><a href="指数预测1.html" style="font-size:17px;">养老指数预测</a></li>
+                            <li class="layui-nav-item"><a href="关键词.html" style="font-size:17px;">养老关键词</a></li>
+                            <li class="layui-nav-item"><a href="年龄1.html" style="font-size:17px;">养老年龄分析</a></li>
+                            <li class="layui-nav-item"><a href="地域分布1.html" style="font-size:17px;">养老地域分布</a></li>
+                        </ul>
+                    </div>
+                </div>
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+            <div style="padding: 15px;">
+                <a href="" class="act"><img src="../static/img/bg1.jpeg"  class="bg layui-anim layui-anim-down" data-anim="layui-anim-down"></a>
+                <div class="layui-card layui-panel">
+                    <div class="layui-card-header">
+                        <h2 class="layui-icon layui-icon-triangle-r">信息化养老</h2>
+
+                    </div>
+                    <div class="layui-card-body">
+                        <span>互联网领域术语</span><br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信息化养老是以信息化养老终端采集数据为基础，利用互联网、移动通讯网、物联网等手段建立系统服务与互动平台，通过整合公共服务资源和社会服务资源来满足老年客户在安全看护、健康管理、生活照料、休闲娱乐、亲情关爱等方面的养老需求，从而为广大老年群体提供了一种新型的养老解决方案。</span>
+                    </div>
+                </div>
+                <div class="layui-card layui-panel" style="margin-top:30px;">
+                    <div class="layui-card-header" >
+                        <h2 class="layui-icon layui-icon-triangle-r">最新咨询</h2>
+                    </div>
+                    <div class="layui-card-body">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信息化养老利用物联网（The Internet of Things）技术，通过智能感知、识别技术与
+                            <a href="https://baike.baidu.com/item/%E6%99%AE%E9%80%82%E8%AE%A1%E7%AE%97/1715978?fromModule=lemma_inlink" class="alink">普适计算</a>打破了传统思维，使人们最大限度地实现各类传感器和
+                            <a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E7%BD%91%E7%BB%9C/1723676?fromModule=lemma_inlink" class="alink">计算网络</a>
+                            的实施连接，让老人的日常生活（特别是健康状况和出行安全）能被子女远程查看。在上海、北京，老龄化趋势明显的城市，人口收入大幅度增加，家庭投入能力大。信息化养老产品和服务很好实现和推行。例如在北京，红寿堂居家养老信息平台客户端适合快速的搭建中小型单位居家养老平台，适合街道、社区、养老院、老干局、干休所、养老公寓以及中小型的运营公司。
+                            现存的居家养老模式（养老院服务和社区托老所）不能满足老年人在健康、安全、快乐等方面的需求。随着人们生活水平的不断提高，人们对社会养老服务功能的强化和养老服务形式的多样化提出了新的要求。研究表明，85%以上的老年人有享受居家养老的意愿，而选择住养老院等养老机构养老的只占5%~8%左右。我国居家养老服务供给不足、比重偏低、质量不高，不能满足老年人日益增长的服务需求。
+                        随着科技的发展，社会上也涌现出入一系列如只为父母设计的电视盒子科技产品，远程分享让亲情零距离，提升老人的晚年生活质量，最大程度的解决空巢老人寂寞的问题，是智慧养老，居家养老，信息化养老，中国式养老的新形式</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-footer">
+                    <!-- 底部固定区域 -->
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

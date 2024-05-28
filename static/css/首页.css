@@ -1,0 +1,26 @@
+.bg{
+ width:97%;
+ height:400px;
+ margin-left:45px;
+ margin-bottom:20px;
+}
+
+.act:hover{
+opacity:0.8;
+}
+
+.layui-card{
+margin-left:45px;
+}
+
+span{
+font-size:18px;
+}
+
+.alink{
+color:#1e9fff;
+}
+.alink:hover{
+color:#1e9fff;
+text-decoration: underline;
+}

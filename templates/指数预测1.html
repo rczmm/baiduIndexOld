@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>指数预测</title>
+    <!-- 引入 layui.css -->
+    <link href="..\static\layui\css\layui.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/首页.css" rel="stylesheet" type="text/css">
+    <!-- 引入 layui.js -->
+    <script src="layui/layui.js"></script>
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/v5/echarts.min.js"></script>
+    <script src=".\static\layui\layui.js"></script>
+    <link rel="stylesheet" href="../static/layui/css/layui.css">
+</head>
+<body>
+<div class="layui-row">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo layui-hide-xs layui-bg-black" style="width:240px">基于百度指数养老需求分析系统</div>
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item layui-hide layui-show-sm-inline-block">
+                    <a href="javascript:;">
+                        <img src="//unpkg.com/outeres@0.0.10/img/layui/icon-v2.png" class="layui-nav-img">
+                        tester
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">Login</a></dd>
+                        <dd><a href="javascript:;">Exit</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+                    <a href="javascript:;">
+                        <i class="layui-icon layui-icon-more-vertical"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="layui-side layui-bg-black"  style="width:240px">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域 -->
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <li class="layui-nav-item"><a href="热点话题1.html" style="font-size:17px;">养老热点话题</a></li>
+                    <li class="layui-nav-item"><a href="指数预测1.html" style="font-size:17px;">养老指数预测</a></li>
+                    <li class="layui-nav-item"><a href="关键词.html" style="font-size:17px;">养老关键词</a></li>
+                    <li class="layui-nav-item"><a href="年龄1.html" style="font-size:17px;">搜索用户年龄</a></li>
+                    <li class="layui-nav-item"><a href="地域分布1.html" style="font-size:17px;">养老地域分布</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+
+    <style>.box {  } </style>
+        
+    <div class="box">
+                <div id="wee1" class="chart-container" style="position: absolute; width: 1500px; height: 700px; top: 40px; left: 150px;"></div>
+    <script>
+        var chart_wee1 = echarts.init(
+            document.getElementById('wee1'), 'white', {renderer: 'canvas'});
+        var option_wee1 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "color": [
+        "#5470c6",
+        "#91cc75",
+        "#fac858",
+        "#ee6666",
+        "#73c0de",
+        "#3ba272",
+        "#fc8452",
+        "#9a60b4",
+        "#ea7ccc"
+    ],
+    "series": [
+        {
+            "type": "line",
+            "name": "\u9884\u6d4b\u672a\u6765\u4e94\u5929\u7684\u6570\u636e",
+            "connectNulls": false,
+            "xAxisIndex": 0,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    645
+                ],
+                [
+                    2,
+                    1024
+                ],
+                [
+                    3,
+                    1052
+                ],
+                [
+                    4,
+                    1028
+                ],
+                [
+                    5,
+                    982
+                ],
+                [
+                    6,
+                    814
+                ],
+                [
+                    7,
+                    674
+                ],
+                [
+                    8,
+                    682
+                ],
+                [
+                    9,
+                    948
+                ],
+                [
+                    10,
+                    963
+                ],
+                [
+                    11,
+                    898
+                ],
+                [
+                    12,
+                    891
+                ],
+                [
+                    13,
+                    869
+                ],
+                [
+                    14,
+                    619
+                ],
+                [
+                    15,
+                    600
+                ],
+                [
+                    16,
+                    945
+                ],
+                [
+                    17,
+                    838
+                ],
+                [
+                    18,
+                    795
+                ],
+                [
+                    19,
+                    875
+                ],
+                [
+                    20,
+                    843
+                ],
+                [
+                    21,
+                    566
+                ],
+                [
+                    22,
+                    584
+                ],
+                [
+                    23,
+                    841
+                ],
+                [
+                    24,
+                    1040
+                ],
+                [
+                    25,
+                    971
+                ],
+                [
+                    26,
+                    813
+                ],
+                [
+                    27,
+                    773
+                ],
+                [
+                    28,
+                    509
+                ],
+                [
+                    29,
+                    599
+                ],
+                [
+                    30,
+                    791
+                ],
+                [
+                    31,
+                    962
+                ],
+                [
+                    32,
+                    879
+                ],
+                [
+                    33,
+                    852
+                ],
+                [
+                    34,
+                    697
+                ],
+                [
+                    35,
+                    588
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": true,
+                "margin": 8
+            },
+            "logBase": 10,
+            "seriesLayoutBy": "column",
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "markPoint": {
+                "label": {
+                    "show": true,
+                    "position": "inside",
+                    "color": "#fff",
+                    "margin": 8
+                },
+                "data": [
+                    {
+                        "name": "\u9884\u6d4b\u503c",
+                        "coord": [
+                            30,
+                            791
+                        ],
+                        "value": 791
+                    }
+                ]
+            },
+            "zlevel": 0,
+            "z": 0
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u9884\u6d4b\u672a\u6765\u4e94\u5929\u7684\u6570\u636e"
+            ],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderWidth": 1,
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "xAxis": [
+        {
+            "name": "\u5929\u6570",
+            "show": true,
+            "scale": false,
+            "nameLocation": "middle",
+            "nameGap": 40,
+            "nameTextStyle": {
+                "fontFamily": "Times New Roman",
+                "fontSize": 16
+            },
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "name": "\u641c\u7d22\u6b21\u6570",
+            "show": true,
+            "scale": false,
+            "nameLocation": "middle",
+            "nameGap": 40,
+            "nameTextStyle": {
+                "fontFamily": "Times New Roman",
+                "fontSize": 16
+            },
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "show": true,
+            "target": "blank",
+            "subtarget": "blank",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+        chart_wee1.setOption(option_wee1);
+    </script>
+<br/>    </div>
+    <script>
+            $('#wee1').css('border-style', 'dashed').css('border-width', '0px');$("#wee1>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#wee1'), function() { chart_wee1.resize()});
+            var charts_id = ['wee1'];
+function downloadCfg () {
+    const fileName = 'chart_config.json'
+    let downLink = document.createElement('a')
+    downLink.download = fileName
+
+    let result = []
+    for(let i=0; i<charts_id.length; i++) {
+        chart = $('#'+charts_id[i])
+        result.push({
+            cid: charts_id[i],
+            width: chart.css("width"),
+            height: chart.css("height"),
+            top: chart.offset().top + "px",
+            left: chart.offset().left + "px"
+        })
+    }
+
+    let blob = new Blob([JSON.stringify(result)])
+    downLink.href = URL.createObjectURL(blob)
+    document.body.appendChild(downLink)
+    downLink.click()
+    document.body.removeChild(downLink)
+}
+    </script>
+            <div style="padding: 20px;">
+                <h2 style="margin-left:60px;">养老指数预测分析</h2>
+            </div>
+
+
+
+
+
+        </div>
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+        </div>
+    </div>
+</div>
+</body>
+</html>
