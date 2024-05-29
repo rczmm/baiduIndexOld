@@ -1,30 +1,34 @@
 import json
 import re
+import sys
+
 import requests
 import pymysql
 
-def decrypt(t, e):
-    """
-    data数据解密，重构算法
-    :param t:
-    :param e:
-    :return:
-    """
-    n = list(t)
-    a = {}
-    result = []
-    ln = int(len(n) / 2)
-    start = n[ln:]
-    end = n[:ln]
-    for j, k in zip(start, end):
-        a.update({k: j})
-    for j in e:
-        result.append(a.get(j))
-    return ''.join(result)
 
+def decrypt_func(key: str, data: str):
+    a = key
+    i = data
+    n = {}
+    s = []
+    for o in range(len(a) // 2):
+        n[a[o]] = a[len(a) // 2 + o]
+    for r in range(len(data)):
+        s.append(n[i[r]])
+    return ''.join(s).split(',')
+
+
+def get_ptbk(uniqid, headers):
+    url = 'http://index.baidu.com/Interface/ptbk?uniqid={}'
+    resp = requests.get(url.format(uniqid), headers=headers)
+
+    if resp.status_code != 200:
+        print('获取uniqid失败')
+        sys.exit(1)
+    print(resp.json())
+    return resp.json().get('data')
 
 lst = []
-
 
 def cctv():
     """
@@ -51,13 +55,12 @@ def cctv():
     }
     response = requests.get(url, headers=headers, cookies=cookies).text  # 发送请求，返回文本内容
     data = json.loads(response)  # 将内容转为字符串
+    print(data)
+    uniqid = data['data']['uniqid']
     data = data['data']['userIndexes'][0]['all']['data']  # 提取pc+移动数据
-    uid = re.findall('"uniqid":"(.*?)"', response)[0]  # 提取uid
-    url1 = 'https://index.baidu.com/Interface/ptbk?uniqid={uid}'  # 拼接url
-    res = requests.get(url1, headers=headers, cookies=cookies).text  # 发送请求拿到秘钥
-    # 将秘钥提取出来
-    jmid = re.findall('"data":"(.*?)"', res)[0]  # 密文提取
-    result = decrypt(jmid, data)  # 传入函解密函数中返回密文
+    uid = get_ptbk(uniqid, headers)  # 获取uniqid
+    print(uid)
+    result = decrypt_func(uid, data)
     result = result.split(',')  # 以逗号做分隔符 生成一个列表
     lst20 = [i for i in range(1, 31)]
     conn = pymysql.connect(
@@ -184,6 +187,7 @@ def cctv2():
         conn.commit()
     cursor.close()
     conn.close()
+
 
 def main():
     """
